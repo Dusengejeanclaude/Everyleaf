@@ -1,24 +1,35 @@
-# README
+MODEL NAME 
+@user 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Table columns
+-------------------
+User#  
+column     Datatype 
+User ID    |number 
+username   |string 
 
-Things you may want to cover:
+Task# 
+column         Datatype 
+````````````````````````````
+Task ID        |number 
+task name      |string 
+task category  |string 
+task duration  |time and date
 
-* Ruby version
+Label# 
+column      Datatype 
+`````````````````````````
+lable ID    |number
+Label name  |string 
+label date  |date and time 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#SCHEMA
+--------
+USER 
+User ID   Username 
+1          Jean 
+TASK 
+Task ID   name           category   duration 
+1         prototyiping    business   3 months
+LABEL 
+lable ID  label name  label date 
