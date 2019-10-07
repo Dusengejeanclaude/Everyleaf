@@ -14,8 +14,9 @@ column      |   Datatype
 ------------|--------------
 Task ID|number 
 task name|string 
-task category|string 
-task duration|time and date
+task status|string 
+task start_date|date
+task end_date|date
 
 Label# 
 
