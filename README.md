@@ -26,7 +26,7 @@ Label name|string
 label date|date and time 
 
 #SCHEMA
--------
+---------------------------
 @USER 
 
 |User ID |  Username |
