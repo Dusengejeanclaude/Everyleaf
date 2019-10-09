@@ -42,7 +42,7 @@ end
 
 group :test do
   
-  # gem 'capybara', '>= 2.15'
+  gem 'capybara'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'database_cleaner'
