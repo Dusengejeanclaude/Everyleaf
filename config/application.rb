@@ -7,6 +7,7 @@ Bundler.require(*Rails.groups)
 module Everyleaf
   class Application < Rails::Application
     config.i18n.default_locale = :ja
+    config.time_zone ='Cairo'
     config.load_defaults 5.2
     config.generators do |g|
       g.test_framework :rspec,
