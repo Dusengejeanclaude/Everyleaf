@@ -17,7 +17,7 @@ RSpec.feature "Task management function", type: :feature do
     visit new_task_path
     fill_in 'task[name]', :with => 'test'
     fill_in 'task[status]', :with =>'pending'
-    click_on 'Create Task'
+    click_on '登録する'
     expect(page).to have_content'Task was successfully created'
   end
 
@@ -27,4 +27,7 @@ RSpec.feature "Task management function", type: :feature do
   click_link "Show"
   expect(page).to have_content'testtesttest'
   end
-end
+  scenario "Test whether tasks are arranged in descending order of creation date" do
+    # Write test content here
+  end
+  end
