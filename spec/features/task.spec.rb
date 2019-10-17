@@ -3,6 +3,7 @@ require 'rails_helper'
 
 RSpec.feature "Task management function", type: :feature do
   
+ 
   scenario "Test task list" do
 
   Task.create!(name: 'test_task_01', status: 'testtesttest')
@@ -28,6 +29,8 @@ RSpec.feature "Task management function", type: :feature do
   expect(page).to have_content'testtesttest'
   end
   scenario "Test whether tasks are arranged in descending order of creation date" do
-    # Write test content here
-  end
+    Task.all.order('end_date desc')
+    visit tasks_path
+    expect(page).to have_content'test'
+  end 
   end

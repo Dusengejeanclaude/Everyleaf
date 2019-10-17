@@ -2,6 +2,8 @@
 <%= t('view.sample') %>
 <h1>Tasks</h1>
 
+<%= link_to 'end_date', tasks_path(sort_by_date: 'true') %>
+
 <table>
   <thead>
     <tr>
