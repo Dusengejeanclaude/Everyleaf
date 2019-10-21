@@ -26,7 +26,7 @@ lable ID|number
 Label name|string 
 label date|date and time 
 
-============
+================================
 how to deploy on Heroku# step 13 
 $ git add .
 $ git commit -am "make it better"
