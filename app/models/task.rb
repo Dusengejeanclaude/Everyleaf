@@ -6,4 +6,6 @@ class Task < ApplicationRecord
         order(start_date: :desc)
        end 
     end 
+    validates :name, presence: true 
+    validates :status, presence: true 
 end
