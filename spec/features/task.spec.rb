@@ -29,8 +29,13 @@ RSpec.feature "Task management function", type: :feature do
   expect(page).to have_content'testtesttest'
   end
   scenario "Test whether tasks are arranged in descending order of creation date" do
-    Task.all.order('end_date desc')
+    Task.all.order('created_at desc')
     visit tasks_path
     expect(page).to have_content'test'
   end 
+  scenario "Test whether tasks are arranged in descending order of deadline date" do
+    Task.all.order('end_date desc')
+    visit tasks_path
+    expect(page).to have_content'test'
   end
+end 

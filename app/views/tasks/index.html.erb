@@ -2,7 +2,8 @@
 <%= t('view.sample') %>
 <h1>Tasks</h1>
 
-<%= link_to 'end_date', tasks_path(sort_by_date: 'true') %>
+<%= link_to 'Sort by creation', tasks_path(sort_by_creation: 'true'), style:"margin-right: 100px" %>
+<%= link_to 'Sort by deadline', tasks_path(sort_by_deadline: 'true') %>
 
 <table>
   <thead>
@@ -11,6 +12,7 @@
       <th>Project Status</th>
       <th>Start date</th>
       <th>End date</th>
+      <th>Created At</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +24,7 @@
         <td><%= task.status %></td>
         <td><%= task.start_date %></td>
         <td><%= task.end_date %></td>
+        <td><%= task.created_at %></td>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
