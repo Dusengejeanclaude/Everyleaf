@@ -38,4 +38,8 @@ RSpec.feature "Task management function", type: :feature do
     visit tasks_path
     expect(page).to have_content'test'
   end
+  scenario "Do the search by title" do
+    visit tasks_path
+    expect(page).to have_content'test'
+  end
 end 

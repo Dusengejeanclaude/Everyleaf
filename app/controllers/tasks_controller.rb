@@ -2,12 +2,16 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:sort_by_creation]
+    @search = Task.ransack(params[:q])
+    if params[:q]
+      @tasks = @search.result
+    elsif params[:sort_by_creation]
     @tasks = Task.order('created_at desc')
     elsif params[:sort_by_deadline]
       @tasks = Task.order('end_date desc')
     else
       @tasks = Task.all
+    
   end
 end 
 

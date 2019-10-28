@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 <%= t('view.sample') %>
+<%= search_form_for @search do |f| %>
+   <form class="form-inline">
+     <div class="form-group mx-sm-3 mb-2">
+       <%= f.text_field :status_cont, class:"form-control btn-search",style:'margin-bottom:0px; width:40%',placeholder:' Search for the task status here: '%>
+       <%= f.submit "Search", class:'btn btn-info class="btn btn-primary mb-2'%>
+      </div>
+   </form>
+ <%end%>
 <h1>Tasks</h1>
 
 <%= link_to 'Sort by creation', tasks_path(sort_by_creation: 'true'), style:"margin-right: 100px" %>
