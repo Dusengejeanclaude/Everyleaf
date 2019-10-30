@@ -6,6 +6,7 @@ class Task < ApplicationRecord
         order(start_date: :desc)
        end 
     end 
+    validates :priority, presence: true
     validates :name, presence: true 
     validates :status, presence: true 
 end

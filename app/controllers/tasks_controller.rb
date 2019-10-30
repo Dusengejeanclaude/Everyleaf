@@ -9,11 +9,12 @@ class TasksController < ApplicationController
     @tasks = Task.order('created_at desc')
     elsif params[:sort_by_deadline]
       @tasks = Task.order('end_date desc')
+    elsif params[:sort_with]
+      @tasks = Task.order('priority desc')
     else
-      @tasks = Task.all
-    
-  end
-end 
+      @tasks = Task.all    
+    end
+  end 
 
   def show
   end
@@ -67,6 +68,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :status, :start_date, :end_date)
+      params.require(:task).permit(:name, :status, :start_date, :end_date, :priority)
     end
 end

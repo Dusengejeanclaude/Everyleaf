@@ -20,5 +20,17 @@
   <%= @task.end_date %>
 </p>
 
+<p>
+  <strong>Priority:</strong>
+  <%if @task.priority == "0" %>
+    <%= @task.priority="Low" %>
+  <%elsif @task.priority == "1"%>
+    <%= @task.priority="Medium" %>
+  <%elsif @task.priority == "2"%>
+    <%= @task.priority="High" %>
+  <%else%>
+  <%end%>  
+</p>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>
