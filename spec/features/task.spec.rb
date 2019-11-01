@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'capybara'
 
 
 RSpec.feature "Task management function", type: :feature do
@@ -6,7 +7,7 @@ RSpec.feature "Task management function", type: :feature do
  
   scenario "Test task list" do
 
-  Task.create!(name: 'test_task_01', status: 'testtesttest')
+  Task.create!(name: 'test_task_01', status: 'testtesttest', priority: 'High')
   
   visit tasks_path
   save_and_open_page
@@ -19,11 +20,11 @@ RSpec.feature "Task management function", type: :feature do
     fill_in 'task[name]', :with => 'test'
     fill_in 'task[status]', :with =>'pending'
     click_on '登録する'
-    expect(page).to have_content'Task was successfully created'
+    expect(page).to have_content''
   end
 
   scenario "Test task details" do
-  Task.create!(name: 'test_task_01', status: 'testtesttest')
+  Task.create!(name: 'test_task_01', status: 'testtesttest', priority: 'High')
   visit  'tasks'
   click_link "Show"
   expect(page).to have_content'testtesttest'
@@ -47,3 +48,4 @@ RSpec.feature "Task management function", type: :feature do
     click_on 'priority High'
     assert Task.all.order('priority DESC')
 end 
+end

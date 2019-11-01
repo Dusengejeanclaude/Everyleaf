@@ -6,13 +6,13 @@ class TasksController < ApplicationController
     if params[:q]
       @tasks = @search.result
     elsif params[:sort_by_creation]
-    @tasks = Task.order('created_at desc')
+    @tasks = Task.order('created_at desc').page(params[:page])
     elsif params[:sort_by_deadline]
-      @tasks = Task.order('end_date desc')
+      @tasks = Task.order('end_date desc').page(params[:page])
     elsif params[:sort_with]
-      @tasks = Task.order('priority desc')
+      @tasks = Task.order('priority desc').page(params[:page])
     else
-      @tasks = Task.all    
+      @tasks = Task.all.page(params[:page])  
     end
   end 
 

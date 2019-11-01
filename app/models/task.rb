@@ -1,4 +1,5 @@
 class Task < ApplicationRecord
+    paginates_per 6
      def self.order_list(sort_order)
       if sort_order == "end_date"
         order(end_date: :desc)
