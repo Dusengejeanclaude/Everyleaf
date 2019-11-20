@@ -1,0 +1,17 @@
+<div class="card" style="height: 30rem;width: 16rem;margin-left:  28rem;background-color: #DEBC99;">
+<div class="card-header" style="text-align: center;background-color: #DCD0BA"><h1>Login</h1>
+</div>
+ <%= form_with(scope: :session, url:sessions_path, local: true) do |form| %>
+       <div class="card-body"><%= form.label :Email %></div>
+       <div class="card-body"><%= form.email_field :email %></div>
+       <div class="card-body"><%= form.label :Password %></div>
+       <div class="card-body"><%= form.password_field :password %></div>
+       <div class="card-body"><%= form.submit "Login", id:"login-button", class:"submit-btn"%></div>
+       <%= link_to "sign up", new_user_path %>
+       <% end %>
+      
+      </div>
+      </div>
+
+    
+ 

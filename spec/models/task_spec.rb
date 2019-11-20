@@ -14,6 +14,6 @@ RSpec.describe Task, type: :model do
 
   it "validation passes If content is described in  name and status" do
     task = Task.new(name: 'Pass test', status: 'pass test')
-    expect(task).not_to be_valid
+    expect(task).to be_valid
   end
 end
