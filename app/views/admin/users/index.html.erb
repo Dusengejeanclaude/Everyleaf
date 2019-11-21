@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users Panel</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create New User', new_user_path %>
+<p id="notice"><%= notice %></p>
+<%= t('view.sample') %>
+<h1>Tasks</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Project Status</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Created At</th>
+      <th>priority</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= task.status %></td>
+        <td><%= task.start_date %></td>
+        <td><%= task.end_date %></td>
+        <td><%= task.created_at %></td>
+        <td><%if task.priority == "0" %>
+              <%= task.priority="Low" %>
+            <%elsif task.priority == "1"%>
+              <%= task.priority="Medium" %>
+            <%elsif task.priority == "2"%>
+              <%= task.priority="High" %>
+            <%else%>
+            <%end%>            
+        </td>
+        <td><%= link_to 'Show', task %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task', new_task_path %>
+
+

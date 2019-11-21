@@ -29,7 +29,6 @@ class TasksController < ApplicationController
   def create
    
     @task = Task.new(task_params)
-
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task, notice: 'a Task was successfully created.' }
@@ -68,6 +67,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :status, :start_date, :end_date, :priority)
+      params.require(:task).permit(:name, :status, :start_date, :end_date, :priority, :user_id)
     end
 end

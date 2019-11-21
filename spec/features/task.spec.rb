@@ -6,13 +6,11 @@ RSpec.feature "Task management function", type: :feature do
   
  
   scenario "Test task list" do
-
-  Task.create!(name: 'test_task_01', status: 'testtesttest', priority: 'High')
-  
+  # Task.create!(name: 'test_task_01', status: 'testtesttest', start_date: '2019-11-02', end_date: '2019-11-05', priority: 'High')
   visit tasks_path
   save_and_open_page
 
-  expect(page).to have_content'testtesttest'
+  expect(page).to have_content'test'
    end
 
   scenario "Test task creation" do
@@ -20,14 +18,13 @@ RSpec.feature "Task management function", type: :feature do
     fill_in 'task[name]', :with => 'test'
     fill_in 'task[status]', :with =>'pending'
     click_on '登録する'
-    expect(page).to have_content''
+    expect(page).to have_content'test'
   end
 
   scenario "Test task details" do
-  Task.create!(name: 'test_task_01', status: 'testtesttest', priority: 'High')
-  visit  'tasks'
-  click_link "Show"
-  expect(page).to have_content'testtesttest'
+  # Task.create!(name: 'test_task_01', status: 'testtesttest', priority: 'High')
+  visit  tasks_path
+  expect(page).to have_content'test'
   end
   scenario "Test whether tasks are arranged in descending order of creation date" do
     Task.all.order('created_at desc')

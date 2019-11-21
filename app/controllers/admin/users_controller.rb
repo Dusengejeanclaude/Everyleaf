@@ -1,8 +1,14 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  
+  # before_action :ensure_admin_user!
+  # def ensure_admin_user!
+  # unless logged_in and current_user.admin?
+  #   redirect_to root_path, notice:"you have no right to view that page <<you are not admin>>"
+  # end
+# end
   def index
     @users = User.all
+    @tasks = Task.all
   end
 
   def show
