@@ -6,7 +6,7 @@ RSpec.feature "Task management function", type: :feature do
   
  
   scenario "Test task list" do
-  # Task.create!(name: 'test_task_01', status: 'testtesttest', start_date: '2019-11-02', end_date: '2019-11-05', priority: 'High')
+  Task.create!(name: 'test_task_01', status: 'testtesttest', priority: 'High')
   visit tasks_path
   save_and_open_page
 
@@ -22,7 +22,7 @@ RSpec.feature "Task management function", type: :feature do
   end
 
   scenario "Test task details" do
-  # Task.create!(name: 'test_task_01', status: 'testtesttest', priority: 'High')
+  Task.create!(name: 'test_task_01', status: 'testtesttest', priority: 'High')
   visit  tasks_path
   expect(page).to have_content'test'
   end
