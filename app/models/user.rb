@@ -5,5 +5,5 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 }
   validates :email, uniqueness: true
   before_validation { email.downcase! }
-  has_many :tasks, dependent: :destroy
+  has_many :tasks
 end

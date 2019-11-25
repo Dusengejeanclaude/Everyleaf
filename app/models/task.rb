@@ -10,5 +10,5 @@ class Task < ApplicationRecord
     validates :priority, presence: true
     validates :name, presence: true 
     validates :status, presence: true 
-    belongs_to :user
+    belongs_to :user, dependent: :destroy
 end
